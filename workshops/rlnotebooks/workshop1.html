@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>rl-workshop-1-an-introduction-and-tabular-methods</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>workshop1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11777,7 +11777,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Workshop-1:-An-introduction-and-tabular-methods.">Workshop 1: An introduction and tabular methods.<a class="anchor-link" href="#Workshop-1:-An-introduction-and-tabular-methods.">&#182;</a></h1><ul>
 <li>Notebook for Workshop 1: An introduction and tabular methods.</li>
-<li>Other parts of the workshops are available and can be found <a href="https://netbrainml.github.io/workshops/">here</a>.</li>
+<li>Other parts of the workshops are available and can be found <a href="https://netbrainml.github.io/workshop/">here</a>.</li>
 </ul>
 <h3 id="Table-of-Content">Table of Content<a class="anchor-link" href="#Table-of-Content">&#182;</a></h3><ol>
 <li><p><a href="#introduction">Introduction</a></p>
@@ -11809,7 +11809,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pip</span>
@@ -11848,7 +11848,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -12103,7 +12103,7 @@ In state = 9 and obs = ❌ = T
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Building a deterministic policy stochastically&quot;</span><span class="p">)</span>
@@ -12129,10 +12129,10 @@ In state = 9 and obs = ❌ = T
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Building a deterministic policy stochastically
-Given observation G = ⬛, we will always choose down
+Given observation G = ⬛, we will always choose up
 Given observation 0 = 0️⃣, we will always choose left
-Given observation 2 = 2️⃣, we will always choose down
-Given observation 4 = 4️⃣, we will always choose down
+Given observation 2 = 2️⃣, we will always choose right
+Given observation 4 = 4️⃣, we will always choose left
 </pre>
 </div>
 </div>
@@ -12143,7 +12143,7 @@ Given observation 4 = 4️⃣, we will always choose down
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
@@ -12177,16 +12177,44 @@ Given observation 4 = 4️⃣, we will always choose down
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Starting at: 2
-0️⃣⬛🔳⬛4️⃣
+Starting at: 0
+🔳⬛2️⃣⬛4️⃣
 ❌⬛✅⬛❌
 
 
 
-prev: 2
-action:down, obs:T, reward: 1.0
-0️⃣⬛2️⃣⬛4️⃣
-❌⬛😄⬛❌
+prev: 0
+action:left, obs:0, reward: 0.0
+🔳⬛2️⃣⬛4️⃣
+❌⬛✅⬛❌
+
+
+
+prev: 0
+action:left, obs:0, reward: 0.0
+🔳⬛2️⃣⬛4️⃣
+❌⬛✅⬛❌
+
+
+
+prev: 0
+action:left, obs:0, reward: 0.0
+🔳⬛2️⃣⬛4️⃣
+❌⬛✅⬛❌
+
+
+
+prev: 0
+action:left, obs:0, reward: 0.0
+🔳⬛2️⃣⬛4️⃣
+❌⬛✅⬛❌
+
+
+
+prev: 0
+action:left, obs:0, reward: 0.0
+🔳⬛2️⃣⬛4️⃣
+❌⬛✅⬛❌
 
 
 
@@ -12200,7 +12228,7 @@ action:down, obs:T, reward: 1.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -12249,7 +12277,7 @@ action:down, obs:T, reward: 1.0
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0️⃣⬛2️⃣⬛🔳
+<pre>0️⃣⬛🔳⬛4️⃣
 ❌⬛✅⬛❌
 
 
@@ -12288,7 +12316,7 @@ action:down, obs:T, reward: 1.0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -12367,16 +12395,16 @@ Our initial state is: 0
 FHFH
 FFFH
 HFFG
-Taking an action: 1
-The state we arrive at is 4
+Taking an action: 2
+The state we arrive at is 0
 
 The reward we recieved is 0.0
 
 Are we done? False
 
-  (Down)
-SFFF
-<span class="ansi-red-bg">F</span>HFH
+  (Right)
+<span class="ansi-red-bg">S</span>FFF
+FHFH
 FFFH
 HFFG
 Probablity Transition Function = env.P = dict(state: dict(action: (prob, next_state, reward, done)))
@@ -12623,7 +12651,7 @@ In state = 15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -12666,15 +12694,15 @@ In state = 15
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Our policy: [3 3 0 3 1 3 3 3 0 1 2 2 0 2 0 2] (16,)
+<pre>Our policy: [3 3 2 1 1 3 0 2 1 3 1 3 0 2 3 0] (16,)
 
             ####################
 
-            Number of wins: 0 out of 100 episodes
+            Number of wins: 6 out of 100 episodes
 
-            Cumulative reward: 0.0 over 100 episodes
+            Cumulative reward: 6.0 over 100 episodes
 
-            Avg. reward per episode: 0.0
+            Avg. reward per episode: 0.06
 
             ####################
             
@@ -12688,7 +12716,7 @@ In state = 15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_value</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">gamma</span><span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
@@ -12784,7 +12812,7 @@ Policy Iteration: Implementation follows traditional approach (Stopping conditio
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Using epilson-convergence</span>
@@ -12827,7 +12855,7 @@ Policy Iteration: Implementation follows traditional approach (Stopping conditio
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">policy_improvement</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
@@ -12839,7 +12867,7 @@ Policy Iteration: Implementation follows traditional approach (Stopping conditio
             <span class="n">prob</span> <span class="o">=</span> <span class="n">transition</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">next_state</span> <span class="o">=</span> <span class="n">transition</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
             <span class="n">rewards</span> <span class="o">=</span> <span class="n">transition</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
-            <span class="n">q</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">prob</span> <span class="o">*</span> <span class="p">(</span><span class="n">rewards</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">value</span><span class="p">[</span><span class="n">next_state</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="n">q</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">rewards</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">prob</span> <span class="o">*</span> <span class="n">value</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
         <span class="n">policy</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">policy</span>
 </pre></div>
@@ -12851,7 +12879,7 @@ Policy Iteration: Implementation follows traditional approach (Stopping conditio
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -12876,7 +12904,7 @@ Policy Iteration: Implementation follows traditional approach (Stopping conditio
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;FrozenLake-v0&quot;</span><span class="p">)</span>
@@ -12909,8 +12937,8 @@ Policy Iteration: Implementation follows traditional approach (Stopping conditio
 
             ####################
             
-CPU times: user 54.9 ms, sys: 0 ns, total: 54.9 ms
-Wall time: 54.9 ms
+CPU times: user 83.6 ms, sys: 0 ns, total: 83.6 ms
+Wall time: 83.6 ms
 </pre>
 </div>
 </div>
@@ -12921,7 +12949,7 @@ Wall time: 54.9 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
@@ -12992,7 +13020,7 @@ HFFG
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13024,7 +13052,7 @@ HFFG
             <span class="n">prob</span> <span class="o">=</span> <span class="n">transition</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">next_state</span> <span class="o">=</span> <span class="n">transition</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
             <span class="n">rewards</span> <span class="o">=</span> <span class="n">transition</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
-            <span class="n">q</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span>  <span class="p">(</span><span class="n">prob</span> <span class="o">*</span> <span class="p">(</span><span class="n">rewards</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">value</span><span class="p">[</span><span class="n">next_state</span><span class="p">]))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="n">q</span><span class="p">[</span><span class="n">action</span><span class="p">]</span> <span class="o">=</span>  <span class="p">(</span><span class="n">rewards</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">prob</span><span class="o">*</span> <span class="n">value</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
         <span class="n">policy</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">policy</span>
 
@@ -13042,7 +13070,7 @@ HFFG
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;FrozenLake-v0&quot;</span><span class="p">)</span>
@@ -13069,16 +13097,16 @@ HFFG
 <pre>
             ####################
 
-            Number of wins: 67 out of 100 episodes
+            Number of wins: 69 out of 100 episodes
 
-            Cumulative reward: 67.0 over 100 episodes
+            Cumulative reward: 69.0 over 100 episodes
 
-            Avg. reward per episode: 0.67
+            Avg. reward per episode: 0.69
 
             ####################
             
-CPU times: user 89.4 ms, sys: 0 ns, total: 89.4 ms
-Wall time: 89.5 ms
+CPU times: user 80.1 ms, sys: 0 ns, total: 80.1 ms
+Wall time: 80.2 ms
 </pre>
 </div>
 </div>
@@ -13089,7 +13117,7 @@ Wall time: 89.5 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
@@ -13160,7 +13188,7 @@ HFFG
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
@@ -13180,20 +13208,26 @@ HFFG
 
 <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">):</span>
     <span class="n">win</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50000</span><span class="p">):</span>
         <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
             <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
             <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>                        
             <span class="k">if</span> <span class="n">reward</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">:</span>
-              <span class="n">win</span> <span class="o">+=</span><span class="mi">1</span>
+                <span class="n">win</span> <span class="o">+=</span><span class="mi">1</span>
             <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>                          
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Winning Percentage: {win/10000 * 100} %&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Winning Percentage: {win/50000 * 100} %&quot;</span><span class="p">)</span>
 
 <span class="n">policy</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">RUNNING A RANDOM POLICY&quot;</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">policy</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">17</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">RUNNING A HEURISTIC POLICY&quot;</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">())</span> 
 </pre></div>
 
 </div>
@@ -13215,17 +13249,21 @@ HFFG
 Cards: Face cards (Jack, Queen, King) have point value 10.
 	Aces can either count as 11 or 1, and it&#39;s called &#39;usable&#39; at 11.
 
-Example of observation: (12, 6, False)
+Example of observation: (12, 3, False)
 
 Number of actions: 2
 
-Player&#39;s cards: [8, 4]
+Player&#39;s cards: [5, 7]
 
-Dealer&#39;s cards: [6, 7]
+Dealer&#39;s cards: [3, 9]
 
 
 RUNNING A RANDOM POLICY
-Winning Percentage: 28.999999999999996 %
+Winning Percentage: 13.880999999999998 %
+
+
+RUNNING A HEURISTIC POLICY
+Winning Percentage: 20.307 %
 </pre>
 </div>
 </div>
@@ -13245,7 +13283,7 @@ Winning Percentage: 28.999999999999996 %
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_all_possible_state</span><span class="p">():</span>
@@ -13288,8 +13326,8 @@ Winning Percentage: 28.999999999999996 %
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(17, 2, True)
 Number of possible states: 10000
-Players:[1, 5], Dealer:[2, 9]
-(16, 2, True)
+Players:[9, 6], Dealer:[5, 4]
+(15, 5, False)
 </pre>
 </div>
 </div>
@@ -13300,7 +13338,7 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
@@ -13309,29 +13347,34 @@ Players:[1, 5], Dealer:[2, 9]
     <span class="n">qvalue</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> 
     <span class="n">policy</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
     <span class="n">pb</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pb</span><span class="p">:</span>
         <span class="n">all_possible_states</span> <span class="o">=</span> <span class="n">get_all_possible_state</span><span class="p">()</span>
-        <span class="n">N</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-        
+        <span class="n">creward</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ne</span><span class="p">):</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">%</span><span class="k">1000</span>: pb.set_description(f&quot;{i}: {n}/{ne}&quot;)
             <span class="c1">#Exploring Start + Create Episode</span>
             <span class="n">arg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_possible_states</span><span class="p">))</span> <span class="c1">#Select a starting state with equal prob.</span>
             <span class="n">start_state</span> <span class="o">=</span> <span class="n">all_possible_states</span><span class="p">[</span><span class="n">arg</span><span class="p">]</span>
             <span class="n">all_possible_states</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="c1">#Sampling without replacement</span>
             <span class="n">episode</span> <span class="o">=</span> <span class="n">create_episode</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">start_state</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span> <span class="c1">#Create a episode   </span>
             
+            <span class="c1">#Calculate returns</span>
+            <span class="n">G</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="p">[],</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">obs</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">episode</span><span class="p">):</span>
+                <span class="n">R</span> <span class="o">=</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">R</span> <span class="o">+</span> <span class="n">reward</span>
+                <span class="n">G</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+                <span class="n">creward</span><span class="o">+=</span> <span class="n">reward</span>
             <span class="c1">#Policy Evaluation over One Episode</span>
             <span class="n">visited</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="n">G</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">episode</span><span class="p">):</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">R</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">episode</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
                     <span class="n">N</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
                     <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">))</span>
-                    <span class="n">G</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">*</span><span class="n">G</span> <span class="o">+</span> <span class="n">reward</span>
                     <span class="c1">#Incremental QValue Improvement</span>
-                    <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span> <span class="o">-</span> <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)])</span>
+                    <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">*</span> <span class="p">(</span><span class="n">R</span> <span class="o">-</span> <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)])</span>
             
+        <span class="n">pb</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">creward</span><span class="p">))</span>
         <span class="c1">#Greedy Policy Improvement</span>
         <span class="n">seen_sa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qvalue</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span><span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">seen_sa</span><span class="p">:</span>
@@ -13360,12 +13403,11 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Blackjack-v0&quot;</span><span class="p">)</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">fesi_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">9000</span><span class="p">)</span>
-
+<span class="n">policy</span> <span class="o">=</span> <span class="n">fesi_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">ne</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -13383,7 +13425,7 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>7: 8000/9000: 100%|██████████| 8/8 [00:06&lt;00:00,  1.29it/s]
+<pre>-873.0: 100%|██████████| 50/50 [00:41&lt;00:00,  1.22it/s] 
 </pre>
 </div>
 </div>
@@ -13394,7 +13436,7 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Winning Percentage: 37.24 %
+<pre>Winning Percentage: 21.207 %
 </pre>
 </div>
 </div>
@@ -13414,7 +13456,7 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">epilson</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
@@ -13430,24 +13472,28 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">eegi_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.98</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">epilson</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">eegi_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.98</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
     <span class="n">qvalue</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> 
     <span class="n">policy</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
     <span class="n">pb</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pb</span><span class="p">:</span>
-        <span class="n">N</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">creward</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ne</span><span class="p">):</span>
-            <span class="n">episode</span> <span class="o">=</span> <span class="n">create_episode</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">,</span><span class="n">epilson</span><span class="p">)</span> <span class="c1">#Create a episode   </span>
+            <span class="n">episode</span> <span class="o">=</span> <span class="n">create_episode</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">,</span><span class="n">epilson</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="c1">#Create a episode   </span>
             <span class="c1">#Policy Evaluation over One Episode</span>
             <span class="n">G</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">episode</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">obs</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">episode</span><span class="p">):</span>
                 <span class="n">N</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
                 <span class="n">G</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">*</span><span class="n">G</span> <span class="o">+</span> <span class="n">reward</span>
                 <span class="c1">#Incremental QValue Improvement</span>
                 <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span> <span class="o">-</span> <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)])</span>
+                <span class="n">creward</span><span class="o">+=</span><span class="n">reward</span>
+        
+        <span class="n">pb</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">creward</span><span class="p">))</span>
         <span class="c1">#Greedy Policy Improvement</span>
         <span class="n">seen_sa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qvalue</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span><span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">seen_sa</span><span class="p">:</span>
@@ -13474,11 +13520,11 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Blackjack-v0&quot;</span><span class="p">)</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">eegi_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">policy</span> <span class="o">=</span> <span class="n">eegi_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">ne</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -13496,7 +13542,7 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 20/20 [00:07&lt;00:00,  2.64it/s]
+<pre>-528.0: 100%|██████████| 50/50 [01:07&lt;00:00,  1.35s/it] 
 </pre>
 </div>
 </div>
@@ -13507,7 +13553,7 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Winning Percentage: 39.22 %
+<pre>Winning Percentage: 21.215 %
 </pre>
 </div>
 </div>
@@ -13527,7 +13573,7 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span> 
@@ -13568,16 +13614,16 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(12, 7, False) {0: 0.5, 1: 0.5}
-(17, 4, False) {0: 0.5, 1: 0.5}
-(9, 10, False) {0: 0.5, 1: 0.5}
-(17, 10, False) {0: 0.5, 1: 0.5}
-(16, 1, False) {0: 0.5, 1: 0.5}
-(14, 10, False) {0: 0.5, 1: 0.5}
-(21, 10, True) {0: 0.5, 1: 0.5}
-(11, 8, False) {0: 0.5, 1: 0.5}
-(12, 10, False) {0: 0.5, 1: 0.5}
-(14, 10, False) {0: 0.5, 1: 0.5}
+<pre>(13, 8, False) {0: 0.5, 1: 0.5}
+(15, 7, False) {0: 0.5, 1: 0.5}
+(15, 7, False) {0: 0.5, 1: 0.5}
+(14, 2, False) {0: 0.5, 1: 0.5}
+(15, 1, False) {0: 0.5, 1: 0.5}
+(12, 6, False) {0: 0.5, 1: 0.5}
+(9, 2, False) {0: 0.5, 1: 0.5}
+(19, 10, False) {0: 0.5, 1: 0.5}
+(18, 10, False) {0: 0.5, 1: 0.5}
+(20, 1, False) {0: 0.5, 1: 0.5}
 </pre>
 </div>
 </div>
@@ -13588,10 +13634,10 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.98</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">epilson</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.98</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">epilson</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
     <span class="n">qvalue</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> 
     
     <span class="sd">&quot;&quot;&quot;</span>
@@ -13602,27 +13648,27 @@ Players:[1, 5], Dealer:[2, 9]
     <span class="n">action_probs</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">partial</span><span class="p">(</span><span class="n">init_action_prob</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">))</span>
     <span class="n">bp</span> <span class="o">=</span> <span class="n">Policy</span><span class="p">(</span><span class="n">action_probs</span><span class="p">)</span>
     <span class="n">tp</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
-    
     <span class="n">pb</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pb</span><span class="p">:</span>
-        <span class="n">N</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">creward</span><span class="o">=</span><span class="mi">0</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ne</span><span class="p">):</span>
-            <span class="n">episode</span> <span class="o">=</span> <span class="n">create_episode</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">bp</span><span class="p">,</span><span class="n">epilson</span><span class="p">)</span> <span class="c1">#Create a episode   </span>
+            <span class="n">episode</span> <span class="o">=</span> <span class="n">create_episode</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">bp</span><span class="p">)</span> <span class="c1">#Create a episode   </span>
             <span class="c1">#Policy Evaluation over One Episode</span>
             <span class="n">G</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">episode</span><span class="p">):</span>
-                <span class="n">N</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">obs</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">episode</span><span class="p">):</span>
                 <span class="n">G</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">*</span><span class="n">G</span> <span class="o">+</span> <span class="n">reward</span>
                 <span class="c1">#Incremental QValue Improvement</span>
                 <span class="n">is_ratio</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">epilson</span><span class="p">)</span><span class="o">/</span><span class="n">bp</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">obs</span><span class="p">][</span><span class="n">action</span><span class="p">]</span> <span class="k">if</span> <span class="n">tp</span><span class="p">[</span><span class="n">obs</span><span class="p">]</span><span class="o">==</span><span class="n">action</span> <span class="k">else</span> <span class="n">epilson</span><span class="o">/</span><span class="n">bp</span><span class="o">.</span><span class="n">P</span><span class="p">[</span><span class="n">obs</span><span class="p">][</span><span class="n">action</span><span class="p">]</span>
-                <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">*</span> <span class="n">is_ratio</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span> <span class="o">-</span> <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)])</span>
+                <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="o">+=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">is_ratio</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span> <span class="o">-</span> <span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)])</span>
+                <span class="n">creward</span><span class="o">+=</span><span class="n">reward</span>
+        <span class="n">pb</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">creward</span><span class="p">))</span>
         <span class="c1">#Greedy Policy Improvement</span>
         <span class="n">seen_sa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qvalue</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">obs</span><span class="p">,</span><span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">seen_sa</span><span class="p">:</span>
             <span class="n">tp</span><span class="p">[</span><span class="n">obs</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">([</span><span class="n">qvalue</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)])</span>
-    <span class="k">return</span> <span class="n">policy</span>
+    <span class="k">return</span> <span class="n">tp</span>
             
-<span class="k">def</span> <span class="nf">create_episode</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">,</span> <span class="n">epilson</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">create_episode</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">policy</span><span class="p">):</span>
     <span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
     <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">act</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
     <span class="n">next_obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
@@ -13642,11 +13688,11 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s2">&quot;Blackjack-v0&quot;</span><span class="p">)</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">is_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">policy</span> <span class="o">=</span> <span class="n">is_mc</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">ne</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -13664,7 +13710,7 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 20/20 [00:07&lt;00:00,  2.59it/s]
+<pre>-3919.0: 100%|██████████| 50/50 [02:21&lt;00:00,  2.82s/it]
 </pre>
 </div>
 </div>
@@ -13675,7 +13721,7 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Winning Percentage: 38.47 %
+<pre>Winning Percentage: 20.169 %
 </pre>
 </div>
 </div>
@@ -13694,7 +13740,7 @@ Players:[1, 5], Dealer:[2, 9]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">gym_maze.envs.maze_env</span> <span class="k">import</span> <span class="n">MazeEnvRandom3x3</span>
@@ -13747,7 +13793,9 @@ Players:[1, 5], Dealer:[2, 9]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Environment: Maze 3x3
+<pre>pygame 2.0.1 (SDL 2.0.14, Python 3.7.6)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Environment: Maze 3x3
 
 Example of observation: (0, 0)
 
@@ -13773,7 +13821,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13804,7 +13852,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
     <span class="k">return</span> <span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">Maze3x3Env</span><span class="p">()</span>
-<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -13822,7 +13870,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 150/150 [00:00&lt;00:00, 8830.73it/s]</pre>
+<pre>100%|██████████| 500/500 [00:00&lt;00:00, 12375.57it/s]</pre>
 </div>
 </div>
 
@@ -13854,7 +13902,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">gym_maze.envs.maze_env</span> <span class="k">import</span> <span class="n">MazeEnvRandom5x5</span>
@@ -13870,7 +13918,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">Maze5x5Env</span><span class="p">()</span>
-<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">850</span><span class="p">)</span>
+<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -13888,7 +13936,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 850/850 [00:00&lt;00:00, 7974.35it/s]</pre>
+<pre>100%|██████████| 1000/1000 [00:00&lt;00:00, 12854.02it/s]</pre>
 </div>
 </div>
 
@@ -13920,7 +13968,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">gym_maze.envs.maze_env</span> <span class="k">import</span> <span class="n">MazeEnvRandom30x30Plus</span>
@@ -13943,7 +13991,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">Maze30x30EnvP</span><span class="p">()</span>
@@ -13965,7 +14013,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000000/1000000 [01:42&lt;00:00, 9803.42it/s]</pre>
+<pre>100%|██████████| 1000000/1000000 [01:31&lt;00:00, 10934.53it/s]</pre>
 </div>
 </div>
 
@@ -14006,7 +14054,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">expected_sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.98</span><span class="p">,</span> <span class="n">epilson</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
@@ -14033,7 +14081,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">prob</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">Maze3x3Env</span><span class="p">()</span>
-<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">expected_sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">expected_sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -14051,7 +14099,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 80/80 [00:00&lt;00:00, 9082.76it/s]</pre>
+<pre>100%|██████████| 200/200 [00:00&lt;00:00, 7449.72it/s]</pre>
 </div>
 </div>
 
@@ -14061,7 +14109,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Ran for 3 steps with cumulative reward: 0.9666666666666667
+<pre>Ran for 999 steps with cumulative reward: -11.111111111111075
 </pre>
 </div>
 </div>
@@ -14083,11 +14131,11 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">Maze5x5Env</span><span class="p">()</span>
-<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">expected_sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">750</span><span class="p">)</span>
+<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">expected_sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -14105,7 +14153,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 750/750 [00:00&lt;00:00, 6228.95it/s]</pre>
+<pre>100%|██████████| 1000/1000 [00:00&lt;00:00, 8123.36it/s]</pre>
 </div>
 </div>
 
@@ -14137,7 +14185,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">Maze30x30EnvP</span><span class="p">()</span>
@@ -14159,7 +14207,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 500000/500000 [01:19&lt;00:00, 6328.88it/s] </pre>
+<pre>100%|██████████| 500000/500000 [01:04&lt;00:00, 7723.18it/s]</pre>
 </div>
 </div>
 
@@ -14169,7 +14217,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Ran for 38 steps with cumulative reward: 0.9957777777777778
+<pre>Ran for 22 steps with cumulative reward: 0.9975555555555555
 </pre>
 </div>
 </div>
@@ -14200,7 +14248,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">q_learning</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.98</span><span class="p">):</span>
@@ -14240,7 +14288,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 200/200 [00:00&lt;00:00, 5736.78it/s]</pre>
+<pre>100%|██████████| 200/200 [00:00&lt;00:00, 7528.28it/s]</pre>
 </div>
 </div>
 
@@ -14281,7 +14329,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">double_q_learning</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.98</span><span class="p">):</span>
@@ -14314,7 +14362,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">([(</span><span class="n">qvalue1</span><span class="p">[(</span><span class="n">state</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span><span class="o">+</span><span class="n">qvalue2</span><span class="p">[(</span><span class="n">state</span><span class="p">,</span><span class="n">action</span><span class="p">)])</span><span class="o">/</span><span class="mi">2</span> <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)]))</span>
 
 <span class="n">env</span> <span class="o">=</span> <span class="n">Maze3x3Env</span><span class="p">()</span>
-<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue1</span><span class="p">,</span> <span class="n">qvalue2</span> <span class="o">=</span> <span class="n">double_q_learning</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue1</span><span class="p">,</span> <span class="n">qvalue2</span> <span class="o">=</span> <span class="n">double_q_learning</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -14332,7 +14380,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 200/200 [00:00&lt;00:00, 6127.19it/s]</pre>
+<pre>100%|██████████| 400/400 [00:00&lt;00:00, 9388.43it/s]</pre>
 </div>
 </div>
 
@@ -14382,7 +14430,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">egreedy</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">obs</span> <span class="p">,</span><span class="n">epilson</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
@@ -14424,7 +14472,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
     <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">([</span><span class="n">value</span><span class="p">[(</span><span class="n">obs</span><span class="p">,</span><span class="n">action</span><span class="p">)]</span> <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)]))</span>
     
 <span class="n">env</span> <span class="o">=</span> <span class="n">Maze3x3Env</span><span class="p">()</span>
-<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">nstep_sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">200</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">policy</span><span class="p">,</span> <span class="n">qvalue</span> <span class="o">=</span> <span class="n">nstep_sarsa</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">500</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">policy</span><span class="p">)</span>
 </pre></div>
 
@@ -14442,7 +14490,7 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1800/1800 [00:00&lt;00:00, 7936.84it/s]</pre>
+<pre>100%|██████████| 2700/2700 [00:00&lt;00:00, 11527.74it/s]</pre>
 </div>
 </div>
 
@@ -14474,13 +14522,31 @@ Ran for 999 steps with cumulative reward: -11.111111111111075
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;End&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>End
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
